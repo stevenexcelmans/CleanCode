@@ -1,22 +1,33 @@
 package domain.shoppingcart;
 
+import java.time.LocalDate;
+import java.util.Collection;
+
 /**
  * Created by sannev on 23/02/2017.
  */
-public class Item {
-    private String itemId;
+public class Item implements Collection<T> {
+    private int itemId;
     private String itemName;
     private int price;
-    private String date;
+    private int timesBought;
+    private LocalDate date;
 
-    public Item(String itemId, String itemName, int price, String date) {
+    public Item(int itemId, LocalDate date) {
+        this.itemId = itemId;
+        this.date = date;
+        this.timesBought =0;
+    }
+
+    public Item(int itemId, String itemName, int price, LocalDate date, int timesBought) {
         this.itemId = itemId;
         this.itemName = itemName;
         this.price = price;
         this.date = date;
+        this.timesBought = timesBought;
     }
 
-    public String getItemId() {
+    public int getItemId() {
         return itemId;
     }
 
@@ -28,7 +39,12 @@ public class Item {
         return price;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
+    }
+
+    public int getTimesBought()
+    {
+        return this.timesBought;
     }
 }
