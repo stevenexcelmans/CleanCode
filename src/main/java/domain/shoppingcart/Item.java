@@ -6,7 +6,7 @@ import java.util.Collection;
 /**
  * Created by sannev on 23/02/2017.
  */
-public class Item implements Collection<T> {
+public class Item  {
     private int itemId;
     private String itemName;
     private int price;

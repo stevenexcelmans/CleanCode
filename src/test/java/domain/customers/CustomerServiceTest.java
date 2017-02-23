@@ -4,9 +4,12 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
+
+import static org.mockito.Mockito.verify;
 
 public class CustomerServiceTest {
 
@@ -14,14 +17,15 @@ public class CustomerServiceTest {
     public MockitoRule rule = MockitoJUnit.rule();
 
     @InjectMocks
-    private CustomerRepository customerRepository;
     private CustomerService customerService;
 
-    @Test
-    public void addCustomerShouldAddCustomerToCustomerRepo(){
-        customerService.addCustomer("1", "Jebus","Dontbelievein");
+    @Mock
+    private CustomerRepository customerRepository;
 
-        Mockito.verify(customerRepository).addCustomer(new Customer("1","Jebus","Dontbelievein"));
+    @Test
+    public void addCustomerShouldAddCustomerToCustomerRepo()throws Exception{
+        customerService.addCustomer(1, "Jebus","Dontbelievein");
+        verify(customerRepository).addCustomer(new Customer(1,"Jebus","Dontbelievein"));
     }
 }
 

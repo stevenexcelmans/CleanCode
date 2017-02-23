@@ -3,14 +3,16 @@ package domain.customers;
 import domain.shoppingcart.Item;
 
 import javax.inject.Named;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 @Named
 public class CustomerRepository {
 
-    private HashSet<Customer> customers = new HashSet<Customer>();
+    private List<Customer> customers = new ArrayList<>();
 
-    public HashSet<Customer> getCustomers(){
+    public List<Customer> getCustomers(){
         return customers;
     }
 

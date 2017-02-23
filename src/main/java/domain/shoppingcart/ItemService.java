@@ -13,8 +13,8 @@ public class ItemService {
     @Inject
     private CustomerRepository customerRepository;
 
-    public void addItem (String itemId, String itemName, int price, String date){
-        Item item = new Item(itemId, itemName, price, date);
+    public void addItem (Item item){
+
         customerRepository.addItem(item);
     }
 

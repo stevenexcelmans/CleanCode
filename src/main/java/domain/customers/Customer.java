@@ -28,6 +28,10 @@ public class Customer {
         return lastName;
     }
 
+    public void setLoyaltyCard(LoyaltyCard loyaltyCard) {
+        this.loyaltyCard = loyaltyCard;
+    }
+
     public LoyaltyCard getLoyaltyCard(String barcode){
         return loyaltyCard;
     }

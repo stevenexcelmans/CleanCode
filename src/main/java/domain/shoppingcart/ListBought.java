@@ -13,8 +13,8 @@ public class ListBought {
 
     private List<Item> BoughtsItems = new ArrayList<>();
 
-    public Item BoughtTheMost(Item item)
-    {
-        
-    }
+//    public Item BoughtTheMost(Item item)
+//    {
+//
+//    }
 }
