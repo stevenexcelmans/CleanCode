@@ -1,7 +1,6 @@
 package domain.customers;
 
-import domain.loyaltycards.LoyaltyCard;
-import org.springframework.stereotype.Controller;
+import domain.shoppingcart.Item;
 
 import javax.inject.Named;
 import java.util.HashSet;
@@ -23,6 +22,25 @@ public class CustomerRepository {
         for (Customer customer : customers){
             if (customer.getLoyaltyCard(barcode).equals(barcode)){
                 return customer;
+            }
+        }
+        return null;
+    }
+
+    public HashSet<Item> items = new HashSet<>();
+
+    public HashSet<Item> getItems() {
+        return items;
+    }
+
+    public void addItem (Item item) {
+        items.add(item);
+    }
+
+    public Item savsaveGroceriesByDate (String date) {
+        for (Item item : items) {
+            if (item.getDate().equals(date)) {
+                return item;
             }
         }
         return null;
