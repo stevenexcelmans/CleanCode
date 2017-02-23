@@ -1,1 +1,3 @@
 rootProject.name = 'Part3'
+include 'src'
+
